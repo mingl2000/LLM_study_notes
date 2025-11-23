@@ -18,7 +18,7 @@ def find_and_move_duplicates(directory, dest_dir):
     hashes = {}
     for dirpath, _, filenames in os.walk(directory):
         for filename in filenames:
-            if filename.endswith('.url'):
+            if not filename.endswith('.pdf') and not filename.endswith('.epub') :
                 continue  # Skip .url files
             file_path = os.path.join(dirpath, filename)
             # Skip the script itself
